@@ -4,51 +4,91 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+      integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Novacoin</title>
   </head>
   <body>
-    <h1>NovaCoin</h1>
-    <div id="formulario">
-      <form name="genCoin">
-        <label for="difficulty"
-          >Dificultad de minado
-          <input
-            type="number"
-            value="00"
-            name="difficulty"
-            id="difficulty"
-            title="Establezca la dificultad añadiendo una cadena de números que deberá coincidir para poder minar un bloque"
-            min="0"
-            max="9999"
-        /></label>
-        <label for="blocks"
-          >Número de bloques
-          <select name="blocks" id="blocks" title="El número de bloques que se generarán.">
-            <option value="1">1</option>
-            <option selected value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-          </select></label>
-          <label for="mining">
-            ¿Desea simular un minado? <small>Tenga en cuenta que la cuantos mas dígitos contenga la dificultad, más lento será conseguirlo</small>
-              <select name="mining" id="mining">
-                  <option value="si">Si</option>
-                  <option value="no">No</option>
-                </select>
-            </label>
-        <input type="submit" value="Generar">
-      </form>
+    <div class="container content">
+      <h1 class="header">NovaCoin</h1>
+      <div class="columns">
+        <div id="formulario" class="column">
+            <form name="genCoin">
+              <div class="field">
+                <div class="control">
+                  <label class="label" for="difficulty" >Dificultad de minado</label>
+                    <input
+                      class="input"
+                      type="number"
+                      value="00"
+                      name="difficulty"
+                      id="difficulty"
+                      title="Establezca la dificultad añadiendo una cadena de números que deberá coincidir para poder minar un bloque"
+                      min="0"
+                      max="9999"
+                  />
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <div class="field">
+                    <label for="blocks" class="label">Número de bloques</label>
+                    <div class="control">
+                      <div class="select">
+                          <select
+                            name="blocks"
+                            id="blocks"
+                            title="El número de bloques que se generarán."
+                          >
+                            <option value="1">1</option>
+                            <option selected value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                          </select>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="field">
+                    <label class="label" for="mining" title="Por ejemplo: 0000. Tenga en cuenta que cuantos mas dígitos contenga la dificultad, más lento será conseguirlo">¿Desea simular un minado?</label>
+                    <div class="control">
+                    <div class="select">
+                      <select name="mining" id="mining">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button type="submit" class="button is-link">Generar</button>
+                </div>
+              </div>
+            </form>
+        </div>
+        <div id="results" class="column">
+        </div>
+      </div>
     </div>
-    <div id="results" class="table"></div>
   </body>
 </html>
