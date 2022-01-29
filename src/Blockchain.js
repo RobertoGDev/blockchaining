@@ -26,7 +26,11 @@ export class Blockchain {
 
     mineCoin(block) {
         block.mine(this.difficulty);
-        this.container.innerHTML = (`<p>Minado! ${block.hash} con nonce ${block.nonce}</p>`)
+        this.container.innerHTML += (`<article class="panel is-success">
+        <p class="panel-heading">
+            Minado!
+        </p>
+        <a class="panel-block"><span class="panel-icon material-icons md-18">engineering</span> El bloque ${block.index} se consiguió minar tras ${block.nonce} intentos (nonce) </a></article>`)
     }
 
     isValid() {
